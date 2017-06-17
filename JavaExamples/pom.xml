@@ -27,18 +27,33 @@
 			<version>1.8.0-alpha2</version>
 		</dependency>
 
-		<!-- <dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.8.0-alpha2</version>
-		</dependency> -->
-		
-		
+		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-simple</artifactId> 
+			<version>1.8.0-alpha2</version> </dependency> -->
+
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.8.0-alpha2</version>
 		</dependency>
+
+
+		<!-- 
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+		-->
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+
+
 
 
 
