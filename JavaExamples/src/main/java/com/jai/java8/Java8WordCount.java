@@ -4,20 +4,27 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.AbstractMap.SimpleEntry;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.stream.Stream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Java8WordCount {
+	
+	public static Logger log = LoggerFactory.getLogger(Java8WordCount.class);
 
 	public static void main(String[] args) throws IOException {
 
 		Path path = Paths.get("./pom.xml");
 		System.out.println(path.getFileName());
 		Stream<String> lines = Files.lines(path);
-		Map<String, Integer> wordCount = lines.flatMap(line -> Arrays.stream(line.trim().split(" ")))
+		Stream<String> flatMap = lines.flatMap(line -> Arrays.stream(line.trim().split(" ")));
+		Stream<String> filter = flatMap.map(word -> word.replaceAll("[^a-zA-Z]", "").toLowerCase().trim()).filter(word -> word.length() > 0);
+		
+		count(filter);
+		//Map<String, Integer> wordCount = 
+				/*
 				.map(word -> word.replaceAll("[^a-zA-Z]", "").toLowerCase().trim()).filter(word -> word.length() > 0)
 				.map(word -> new SimpleEntry<>(word, 1)).sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey()))
 				.reduce(new LinkedHashMap<>(), (acc, entry) -> {
@@ -26,9 +33,17 @@ public class Java8WordCount {
 				}, (m1, m2) -> m1);
 
 		wordCount.forEach((k, v) -> System.out.println(String.format("%s ==>> %d", k, v)));
-		long count = lines.count();
+		*/
+		lines.close();
 
 		int fordebug = 0;
 
+	}
+
+	private static void count(Stream<?> filter) {
+		
+		long count = filter.count();
+		log.info("Stream count : "+count);
+		
 	}
 }
