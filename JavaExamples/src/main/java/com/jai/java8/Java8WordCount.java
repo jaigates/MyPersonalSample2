@@ -23,16 +23,15 @@ public class Java8WordCount {
 	public static Logger log = LoggerFactory.getLogger(Java8WordCount.class);
 
 	public static final String DELIMITER = ",";
-	
+
 	public static void main(String[] args) throws IOException {
 
 		// String fn =("./big.txt");
-		//String fn = "./500krows.csv";
+		// String fn = "./500krows.csv";
 		String fn = "majestic_million.csv";
-		//wordcount1(fn,"wordcount1");
-		wordcount2(fn,"wordcount2");
-		
-		
+		// wordcount1(fn,"wordcount1");
+		wordcount2(fn, "wordcount2");
+
 	}
 
 	public static void wordcount1(String fn, String logmsg) {
@@ -40,7 +39,7 @@ public class Java8WordCount {
 		StopWatch sw = new StopWatch(fn);
 		sw.start(logmsg);
 		Path path = Paths.get(fn);
-		
+
 		log.info(path.toAbsolutePath() + "-" + path.toFile().exists());
 
 		try {
@@ -52,16 +51,14 @@ public class Java8WordCount {
 			});
 			// count(flatMap);
 			// count(filter);
-			Map<String, Long> wordCount = flatMap.map(word -> word.trim())
-					.filter(word -> word.length() > 0).map(word -> new SimpleEntry<>(word, 1))
-					.sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey()))
-					.reduce(new LinkedHashMap<>(), (acc, entry) -> {
+			Map<String, Long> wordCount = flatMap.map(word -> word.trim()).filter(word -> word.length() > 0).map(word -> new SimpleEntry<>(word, 1))
+					.sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey())).reduce(new LinkedHashMap<>(), (acc, entry) -> {
 						acc.put(entry.getKey(), acc.compute(entry.getKey(), (k, v) -> v == null ? 1 : v + 1));
 						return acc;
 					}, (m1, m2) -> m1);
 			lines.close();
-			//print(wordCount);
-			
+			// print(wordCount);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error("", e);

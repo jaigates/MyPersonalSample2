@@ -19,29 +19,29 @@ public class HadoopWordCountClient {
 
 		Path path = new Path("./input");
 		Path outputDir = new Path("./output");
-		
+
 		JobConf conf = new JobConf(true);
 		conf.setWorkingDirectory(outputDir);
-		Job job = Job.getInstance(conf,"WC");
+		Job job = Job.getInstance(conf, "WC");
 
 		job.setJarByClass(HadoopWordCountClient.class);
-		
+
 		job.setMapperClass(WordCountMapper.class);
 		job.setReducerClass(WordCountReducer.class);
 		job.setMaxReduceAttempts(1);
-		
+
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
 
 		FileInputFormat.setInputPaths(conf, path);
 		job.setInputFormatClass(org.apache.hadoop.mapreduce.lib.input.TextInputFormat.class);
-		
+
 		FileOutputFormat.setOutputPath(conf, outputDir);
 		job.setOutputFormatClass(org.apache.hadoop.mapreduce.lib.output.TextOutputFormat.class);
-		
+
 		org.apache.hadoop.fs.FileSystem hdfs = org.apache.hadoop.fs.FileSystem.get(conf);
-		if(hdfs.exists(path)){
-			hdfs.delete(outputDir,true);
+		if (hdfs.exists(path)) {
+			hdfs.delete(outputDir, true);
 		}
 
 		boolean status = job.waitForCompletion(true);
