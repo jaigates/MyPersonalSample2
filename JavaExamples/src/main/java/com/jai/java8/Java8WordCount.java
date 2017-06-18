@@ -22,23 +22,25 @@ public class Java8WordCount {
 
 	public static Logger log = LoggerFactory.getLogger(Java8WordCount.class);
 
+	public static final String DELIMITER = ",";
+	
 	public static void main(String[] args) throws IOException {
 
 		// String fn =("./big.txt");
-		String fn = "./500krows.csv";
-		//String fn = "majestic_million.csv";
-		//wordcount1(fn);
-		wordcount2(fn);
+		//String fn = "./500krows.csv";
+		String fn = "majestic_million.csv";
+		//wordcount1(fn,"wordcount1");
+		wordcount2(fn,"wordcount2");
 		
 		
 	}
 
-	public static void wordcount1(String fn) {
+	public static void wordcount1(String fn, String logmsg) {
 
 		StopWatch sw = new StopWatch(fn);
-		sw.start("wordcount");
+		sw.start(logmsg);
 		Path path = Paths.get(fn);
-		String DELIMITER = ",";
+		
 		log.info(path.toAbsolutePath() + "-" + path.toFile().exists());
 
 		try {
@@ -50,7 +52,7 @@ public class Java8WordCount {
 			});
 			// count(flatMap);
 			// count(filter);
-			Map<String, Long> wordCount = flatMap.map(word -> word.toLowerCase().trim())
+			Map<String, Long> wordCount = flatMap.map(word -> word.trim())
 					.filter(word -> word.length() > 0).map(word -> new SimpleEntry<>(word, 1))
 					.sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey()))
 					.reduce(new LinkedHashMap<>(), (acc, entry) -> {
@@ -58,10 +60,7 @@ public class Java8WordCount {
 						return acc;
 					}, (m1, m2) -> m1);
 			lines.close();
-			sw.stop();
-			log.info("Total time taken : {}", sw.shortSummary());
-			sw.start("forEach");
-			print(wordCount);
+			//print(wordCount);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -75,21 +74,25 @@ public class Java8WordCount {
 	}
 
 	private static void print(Map<String, Long> wordCount) {
-		StopWatch sw = new StopWatch("print1");
+		StopWatch sw = new StopWatch("print");
 		sw.start("print");
-		wordCount.forEach((k, v) -> log.info(String.format("%s ----- %d", k, v)));
+		wordCount.forEach((k, v) -> log.info(String.format("%s ----- %d ", k, v)));
 		sw.stop();
 		log.info(sw.prettyPrint());
 	}
 
-	public static Map<String, Long> wordcount2(String fn) throws IOException {
+	public static Map<String, Long> wordcount2(String fn, String logmsg) throws IOException {
 		StopWatch sw = new StopWatch(fn);
-		sw.start("wordcount");
-		Stream<String> names = Files.lines(Paths.get(fn), Charset.forName(CharsetUtil.getCharset(fn)));
-		Map<String, Long> wordCount = names.collect(groupingBy(name -> name, counting()));
+		sw.start(logmsg);
+		Stream<String> lines = Files.lines(Paths.get(fn), Charset.forName(CharsetUtil.getCharset(fn)));
+		Stream<String> flatMap = lines.flatMap(line -> {
+			String[] split = line.trim().split(DELIMITER);
+			return Arrays.stream(split);
+		});
+		Map<String, Long> wordCount = flatMap.collect(groupingBy(name -> name, counting()));
 		sw.stop();
 		print(wordCount);
-		log.info("Total time taken : {}", sw.shortSummary());
+		log.info(sw.prettyPrint());
 		return wordCount;
 	}
 
