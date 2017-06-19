@@ -34,7 +34,7 @@ object SparkWordCount {
 
     // Create the FileInputDStream on the directory and use the
     // stream to count words in new files created
-    val sw = new StopWatch("wordcount")
+    val sw = new StopWatch(fn)
     sw.start("textfile")
     val lines = ssc.textFile(fn)
     sw.stop()
