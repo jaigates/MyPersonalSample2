@@ -4,6 +4,11 @@ import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
 import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.UncheckedIOException;
+import java.io.Writer;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,14 +28,16 @@ public class Java8WordCount {
 	public static Logger log = LoggerFactory.getLogger(Java8WordCount.class);
 
 	public static final String DELIMITER = ",";
+	
+	public static Path mOutputPath = Paths.get("./output/wcjava.txt");
 
 	public static void main(String[] args) throws IOException {
 
-		// String fn =("./big.txt");
-		// String fn = "./500krows.csv";
-		String fn = "majestic_million.csv";
-		// wordcount1(fn,"wordcount1");
-		wordcount2(fn, "wordcount2");
+		// String fn =("./data/big.txt");
+		// String fn = "./data/500krows.csv";
+		String fn = "./data/majestic_million.csv";
+		wordcount1(fn,"wordcount1::"+fn);
+		wordcount2(fn, "wordcount2::"+fn);
 
 	}
 
@@ -56,6 +63,7 @@ public class Java8WordCount {
 						acc.put(entry.getKey(), acc.compute(entry.getKey(), (k, v) -> v == null ? 1 : v + 1));
 						return acc;
 					}, (m1, m2) -> m1);
+			writeMap(wordCount);
 			lines.close();
 			// print(wordCount);
 
@@ -86,11 +94,35 @@ public class Java8WordCount {
 			String[] split = line.trim().split(DELIMITER);
 			return Arrays.stream(split);
 		});
-		Map<String, Long> wordCount = flatMap.collect(groupingBy(name -> name, counting()));
+		//Files.write("./output/java8wc2", bytes, options);
 		sw.stop();
-		print(wordCount);
+		sw.start("flatMap.collect(groupingBy(name -> name, counting()))");
+		Map<String, Long> wordCount = flatMap.collect(groupingBy(name -> name, counting()));
+		
+	/*	Files.write(Paths.get("output/1"), () -> mHashMap.entrySet().stream()
+			    .<CharSequence>map(e -> e.getKey() + DATA_SEPARATOR + e.getValue())
+			    .iterator());*/
+		sw.stop();
+		writeMap(wordCount);
+		//print(wordCount);
 		log.info(sw.prettyPrint());
 		return wordCount;
+	}
+
+	private static void writeMap(Map<String, Long> wordCount) throws IOException {
+		StopWatch sw = new StopWatch("writeMap");
+		sw.start("Files.newBufferedWriter");
+		Writer writer = Files.newBufferedWriter(mOutputPath);
+		wordCount.forEach((key, value) -> {
+			try {
+				writer.write(key + "--" + value + System.lineSeparator());
+			} catch (IOException ex) {
+				throw new UncheckedIOException(ex);
+			}
+		});
+		sw.stop();
+		log.info(sw.shortSummary());
+
 	}
 
 	private static void count(Stream<?> filter) {
@@ -98,5 +130,19 @@ public class Java8WordCount {
 		long count = filter.count();
 		log.info("Stream count : " + count);
 
+	}
+	
+	public static void write(byte[] buffer ) throws IOException {
+		int number_of_lines = 400000;
+		FileChannel rwChannel = new RandomAccessFile("textfile.txt", "rw").getChannel();
+		ByteBuffer wrBuf = rwChannel.map(FileChannel.MapMode.READ_WRITE, 0, buffer.length * number_of_lines);
+		for (int i = 0; i < number_of_lines; i++)
+		{
+		    wrBuf.put(buffer);
+		}
+		rwChannel.close();
+		
+		
+		
 	}
 }
