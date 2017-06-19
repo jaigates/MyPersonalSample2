@@ -1,10 +1,12 @@
 package com.jai.spark.core;
 
+import java.nio.file._
+
 import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{ Seconds, StreamingContext }
 import org.apache.spark.SparkContext
-import org.springframework.util.StopWatch
 import org.slf4j.LoggerFactory
+import org.springframework.util.StopWatch
+import org.apache.commons.io.FileUtils
 
 /**
  * Counts words in new text files created in the given directory
@@ -48,9 +50,14 @@ object SparkWordCount {
     sw.start("reduceByKey")
     val reduced = wordCounts.reduceByKey(_ + _)
     sw.stop()
-    sw.start("priting foreach")
+    //sw.start("priting foreach")
     //reduced.map(x=>log.info(s"$x._1 : $x._2"))
-    reduced.foreach(println)
+    //reduced.foreach(x=>log.info(s"$x"))
+    
+    val out = Paths.get("./output/sparkwordcount").toFile() 
+    FileUtils.forceDelete(out);
+    sw.start("saveAsTextFile")
+    reduced.saveAsTextFile(out.getCanonicalPath)
     sw.stop()
     log.info(sw.prettyPrint())
     //val collected = wordCounts.collect()
