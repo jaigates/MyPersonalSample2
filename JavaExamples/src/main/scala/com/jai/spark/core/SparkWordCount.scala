@@ -4,6 +4,7 @@ import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{ Seconds, StreamingContext }
 import org.apache.spark.SparkContext
 import org.springframework.util.StopWatch
+import org.slf4j.LoggerFactory
 
 /**
  * Counts words in new text files created in the given directory
@@ -18,10 +19,12 @@ import org.springframework.util.StopWatch
  */
 object SparkWordCount {
 
+  val log = LoggerFactory.getLogger("SparkWordCount")
+
   def main(args: Array[String]) {
 
     val fn = if (args.length < 1)
-      "./data/100krows.csv"
+      "./data/500krows.csv"
     else
       args(0)
 
@@ -32,19 +35,26 @@ object SparkWordCount {
     // Create the FileInputDStream on the directory and use the
     // stream to count words in new files created
     val sw = new StopWatch("wordcount")
+    sw.start("textfile")
     val lines = ssc.textFile(fn)
+    sw.stop()
+    sw.start("flatMap")
     val words = lines.flatMap(_.split(","))
+    sw.stop()
+    sw.start("map")
     val wordCounts = words.map(x => (x, 1))
-    //wordCounts.foreach(println)
-    val reduced= wordCounts.reduceByKey(_ + _)
+    sw.stop()
+    //wordCounts.foreach(log.info)
+    sw.start("reduceByKey")
+    val reduced = wordCounts.reduceByKey(_ + _)
     sw.stop()
     reduced.foreach(println)
-    sw.prettyPrint()
+    log.info(sw.prettyPrint())
     //val collected = wordCounts.collect()
-    println(reduced.count)
-    
+    log.info("" + reduced.count)
+
   }
 
 }
-	// scalastyle:on println
+	// scalastyle:on log.info
 
