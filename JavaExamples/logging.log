@@ -2628,4 +2628,667 @@ ms     %     Task name
   2017-06-18 22:04:57.411 INFO  ShutdownHookManager:58 - Deleting directory C:\Users\jaikumaran.g\AppData\Local\Temp\spark-cc46e7c3-ba05-4424-9229-3921341f72ef
   2017-06-18 22:04:57.415 INFO  RemoteActorRefProvider$RemotingTerminator:74 - Shutting down remote daemon.
   2017-06-18 22:04:57.480 INFO  RemoteActorRefProvider$RemotingTerminator:74 - Remote daemon shut down; proceeding with flushing remote transports.
+  2017-06-18 22:06:18.877 INFO  SparkContext:58 - Running Spark version 1.6.1
+  2017-06-18 22:06:20.257 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  2017-06-18 22:06:20.755 INFO  SecurityManager:58 - Changing view acls to: jaikumaran.g
+  2017-06-18 22:06:20.756 INFO  SecurityManager:58 - Changing modify acls to: jaikumaran.g
+  2017-06-18 22:06:20.757 INFO  SecurityManager:58 - SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(jaikumaran.g); users with modify permissions: Set(jaikumaran.g)
+  2017-06-18 22:06:21.593 INFO  Utils:58 - Successfully started service 'sparkDriver' on port 50736.
+  2017-06-18 22:06:22.296 INFO  Slf4jLogger:80 - Slf4jLogger started
+  2017-06-18 22:06:22.379 INFO  Remoting:74 - Starting remoting
+  2017-06-18 22:06:22.648 INFO  Remoting:74 - Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.0.6:50749]
+  2017-06-18 22:06:22.657 INFO  Utils:58 - Successfully started service 'sparkDriverActorSystem' on port 50749.
+  2017-06-18 22:06:22.677 INFO  SparkEnv:58 - Registering MapOutputTracker
+  2017-06-18 22:06:22.703 INFO  SparkEnv:58 - Registering BlockManagerMaster
+  2017-06-18 22:06:22.723 INFO  DiskBlockManager:58 - Created local directory at C:\Users\jaikumaran.g\AppData\Local\Temp\blockmgr-63de20bd-80fd-4218-8a6a-de3ab778cd3a
+  2017-06-18 22:06:22.751 INFO  MemoryStore:58 - MemoryStore started with capacity 1120.5 MB
+  2017-06-18 22:06:22.849 INFO  SparkEnv:58 - Registering OutputCommitCoordinator
+  2017-06-18 22:06:23.159 INFO  Server:272 - jetty-8.y.z-SNAPSHOT
+  2017-06-18 22:06:23.234 INFO  AbstractConnector:338 - Started SelectChannelConnector@0.0.0.0:4040
+  2017-06-18 22:06:23.235 INFO  Utils:58 - Successfully started service 'SparkUI' on port 4040.
+  2017-06-18 22:06:23.238 INFO  SparkUI:58 - Started SparkUI at http://192.168.0.6:4040
+  2017-06-18 22:06:23.472 INFO  Executor:58 - Starting executor ID driver on host localhost
+  2017-06-18 22:06:23.560 INFO  Utils:58 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50770.
+  2017-06-18 22:06:23.561 INFO  NettyBlockTransferService:58 - Server created on 50770
+  2017-06-18 22:06:23.563 INFO  BlockManagerMaster:58 - Trying to register BlockManager
+  2017-06-18 22:06:23.568 INFO  BlockManagerMasterEndpoint:58 - Registering block manager localhost:50770 with 1120.5 MB RAM, BlockManagerId(driver, localhost, 50770)
+  2017-06-18 22:06:23.571 INFO  BlockManagerMaster:58 - Registered BlockManager
+  2017-06-18 22:06:24.437 INFO  MemoryStore:58 - Block broadcast_0 stored as values in memory (estimated size 199.2 KB, free 199.2 KB)
+  2017-06-18 22:06:24.494 INFO  MemoryStore:58 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 18.5 KB, free 217.8 KB)
+  2017-06-18 22:06:24.497 INFO  BlockManagerInfo:58 - Added broadcast_0_piece0 in memory on localhost:50770 (size: 18.5 KB, free: 1120.5 MB)
+  2017-06-18 22:06:24.503 INFO  SparkContext:58 - Created broadcast 0 from textFile at SparkWordCount.scala:39
+  2017-06-18 22:06:25.094 INFO  FileInputFormat:256 - Total input files to process : 1
+  2017-06-18 22:06:25.132 INFO  SparkContext:58 - Starting job: foreach at SparkWordCount.scala:51
+  2017-06-18 22:06:25.159 INFO  DAGScheduler:58 - Registering RDD 3 (map at SparkWordCount.scala:45)
+  2017-06-18 22:06:25.162 INFO  DAGScheduler:58 - Got job 0 (foreach at SparkWordCount.scala:51) with 2 output partitions
+  2017-06-18 22:06:25.163 INFO  DAGScheduler:58 - Final stage: ResultStage 1 (foreach at SparkWordCount.scala:51)
+  2017-06-18 22:06:25.163 INFO  DAGScheduler:58 - Parents of final stage: List(ShuffleMapStage 0)
+  2017-06-18 22:06:25.166 INFO  DAGScheduler:58 - Missing parents: List(ShuffleMapStage 0)
+  2017-06-18 22:06:25.176 INFO  DAGScheduler:58 - Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at map at SparkWordCount.scala:45), which has no missing parents
+  2017-06-18 22:06:25.265 INFO  MemoryStore:58 - Block broadcast_1 stored as values in memory (estimated size 4.1 KB, free 221.8 KB)
+  2017-06-18 22:06:25.269 INFO  MemoryStore:58 - Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 224.1 KB)
+  2017-06-18 22:06:25.270 INFO  BlockManagerInfo:58 - Added broadcast_1_piece0 in memory on localhost:50770 (size: 2.3 KB, free: 1120.5 MB)
+  2017-06-18 22:06:25.271 INFO  SparkContext:58 - Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:06:25.288 INFO  DAGScheduler:58 - Submitting 2 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at map at SparkWordCount.scala:45)
+  2017-06-18 22:06:25.291 INFO  TaskSchedulerImpl:58 - Adding task set 0.0 with 2 tasks
+  2017-06-18 22:06:25.355 INFO  TaskSetManager:58 - Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2171 bytes)
+  2017-06-18 22:06:25.360 INFO  TaskSetManager:58 - Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2171 bytes)
+  2017-06-18 22:06:25.382 INFO  Executor:58 - Running task 1.0 in stage 0.0 (TID 1)
+  2017-06-18 22:06:25.381 INFO  Executor:58 - Running task 0.0 in stage 0.0 (TID 0)
+  2017-06-18 22:06:25.449 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/500krows.csv:3227648+3227648
+  2017-06-18 22:06:25.449 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/500krows.csv:0+3227648
+  2017-06-18 22:06:25.477 INFO  deprecation:1181 - mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+  2017-06-18 22:06:25.478 INFO  deprecation:1181 - mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+  2017-06-18 22:06:25.478 INFO  deprecation:1181 - mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+  2017-06-18 22:06:25.479 INFO  deprecation:1181 - mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+  2017-06-18 22:06:25.479 INFO  deprecation:1181 - mapred.job.id is deprecated. Instead, use mapreduce.job.id
+  2017-06-18 22:06:26.499 INFO  Executor:58 - Finished task 0.0 in stage 0.0 (TID 0). 2254 bytes result sent to driver
+  2017-06-18 22:06:26.499 INFO  Executor:58 - Finished task 1.0 in stage 0.0 (TID 1). 2254 bytes result sent to driver
+  2017-06-18 22:06:26.516 INFO  TaskSetManager:58 - Finished task 1.0 in stage 0.0 (TID 1) in 1154 ms on localhost (1/2)
+  2017-06-18 22:06:26.518 INFO  TaskSetManager:58 - Finished task 0.0 in stage 0.0 (TID 0) in 1185 ms on localhost (2/2)
+  2017-06-18 22:06:26.520 INFO  TaskSchedulerImpl:58 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+  2017-06-18 22:06:26.525 INFO  DAGScheduler:58 - ShuffleMapStage 0 (map at SparkWordCount.scala:45) finished in 1.213 s
+  2017-06-18 22:06:26.527 INFO  DAGScheduler:58 - looking for newly runnable stages
+  2017-06-18 22:06:26.528 INFO  DAGScheduler:58 - running: Set()
+  2017-06-18 22:06:26.529 INFO  DAGScheduler:58 - waiting: Set(ResultStage 1)
+  2017-06-18 22:06:26.531 INFO  DAGScheduler:58 - failed: Set()
+  2017-06-18 22:06:26.533 INFO  DAGScheduler:58 - Submitting ResultStage 1 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49), which has no missing parents
+  2017-06-18 22:06:26.548 INFO  MemoryStore:58 - Block broadcast_2 stored as values in memory (estimated size 2.5 KB, free 226.6 KB)
+  2017-06-18 22:06:26.550 INFO  MemoryStore:58 - Block broadcast_2_piece0 stored as bytes in memory (estimated size 1587.0 B, free 228.2 KB)
+  2017-06-18 22:06:26.559 INFO  BlockManagerInfo:58 - Added broadcast_2_piece0 in memory on localhost:50770 (size: 1587.0 B, free: 1120.5 MB)
+  2017-06-18 22:06:26.560 INFO  SparkContext:58 - Created broadcast 2 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:06:26.563 INFO  DAGScheduler:58 - Submitting 2 missing tasks from ResultStage 1 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49)
+  2017-06-18 22:06:26.564 INFO  TaskSchedulerImpl:58 - Adding task set 1.0 with 2 tasks
+  2017-06-18 22:06:26.582 INFO  TaskSetManager:58 - Starting task 0.0 in stage 1.0 (TID 2, localhost, partition 0,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:06:26.582 INFO  TaskSetManager:58 - Starting task 1.0 in stage 1.0 (TID 3, localhost, partition 1,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:06:26.584 INFO  Executor:58 - Running task 0.0 in stage 1.0 (TID 2)
+  2017-06-18 22:06:26.589 INFO  Executor:58 - Running task 1.0 in stage 1.0 (TID 3)
+  2017-06-18 22:06:26.609 INFO  ShuffleBlockFetcherIterator:58 - Getting 2 non-empty blocks out of 2 blocks
+  2017-06-18 22:06:26.609 INFO  ShuffleBlockFetcherIterator:58 - Getting 2 non-empty blocks out of 2 blocks
+  2017-06-18 22:06:26.612 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 8 ms
+  2017-06-18 22:06:26.612 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 8 ms
+  2017-06-18 22:06:26.988 INFO  Executor:58 - Finished task 0.0 in stage 1.0 (TID 2). 1165 bytes result sent to driver
+  2017-06-18 22:06:27.077 INFO  Executor:58 - Finished task 1.0 in stage 1.0 (TID 3). 1165 bytes result sent to driver
+  2017-06-18 22:06:27.099 INFO  TaskSetManager:58 - Finished task 0.0 in stage 1.0 (TID 2) in 522 ms on localhost (1/2)
+  2017-06-18 22:06:27.102 INFO  DAGScheduler:58 - ResultStage 1 (foreach at SparkWordCount.scala:51) finished in 0.527 s
+  2017-06-18 22:06:27.105 INFO  TaskSetManager:58 - Finished task 1.0 in stage 1.0 (TID 3) in 519 ms on localhost (2/2)
+  2017-06-18 22:06:27.107 INFO  TaskSchedulerImpl:58 - Removed TaskSet 1.0, whose tasks have all completed, from pool 
+  2017-06-18 22:06:27.123 INFO  DAGScheduler:58 - Job 0 finished: foreach at SparkWordCount.scala:51, took 1.990375 s
+  2017-06-18 22:06:27.130 INFO  SparkWordCount:52 - StopWatch './data/500krows.csv': running time (millis) = 1222
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00669  055%  textfile
+00009  001%  flatMap
+00012  001%  map
+00532  044%  reduceByKey
+
+  2017-06-18 22:06:27.139 INFO  SparkContext:58 - Starting job: count at SparkWordCount.scala:54
+  2017-06-18 22:06:27.147 INFO  MapOutputTrackerMaster:58 - Size of output statuses for shuffle 0 is 152 bytes
+  2017-06-18 22:06:27.152 INFO  DAGScheduler:58 - Got job 1 (count at SparkWordCount.scala:54) with 2 output partitions
+  2017-06-18 22:06:27.152 INFO  DAGScheduler:58 - Final stage: ResultStage 3 (count at SparkWordCount.scala:54)
+  2017-06-18 22:06:27.152 INFO  DAGScheduler:58 - Parents of final stage: List(ShuffleMapStage 2)
+  2017-06-18 22:06:27.152 INFO  DAGScheduler:58 - Missing parents: List()
+  2017-06-18 22:06:27.153 INFO  DAGScheduler:58 - Submitting ResultStage 3 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49), which has no missing parents
+  2017-06-18 22:06:27.156 INFO  MemoryStore:58 - Block broadcast_3 stored as values in memory (estimated size 2.4 KB, free 230.6 KB)
+  2017-06-18 22:06:27.160 INFO  MemoryStore:58 - Block broadcast_3_piece0 stored as bytes in memory (estimated size 1549.0 B, free 232.1 KB)
+  2017-06-18 22:06:27.161 INFO  BlockManagerInfo:58 - Added broadcast_3_piece0 in memory on localhost:50770 (size: 1549.0 B, free: 1120.5 MB)
+  2017-06-18 22:06:27.163 INFO  SparkContext:58 - Created broadcast 3 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:06:27.163 INFO  DAGScheduler:58 - Submitting 2 missing tasks from ResultStage 3 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49)
+  2017-06-18 22:06:27.164 INFO  TaskSchedulerImpl:58 - Adding task set 3.0 with 2 tasks
+  2017-06-18 22:06:27.165 INFO  TaskSetManager:58 - Starting task 0.0 in stage 3.0 (TID 4, localhost, partition 0,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:06:27.166 INFO  TaskSetManager:58 - Starting task 1.0 in stage 3.0 (TID 5, localhost, partition 1,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:06:27.167 INFO  Executor:58 - Running task 0.0 in stage 3.0 (TID 4)
+  2017-06-18 22:06:27.168 INFO  Executor:58 - Running task 1.0 in stage 3.0 (TID 5)
+  2017-06-18 22:06:27.171 INFO  ShuffleBlockFetcherIterator:58 - Getting 2 non-empty blocks out of 2 blocks
+  2017-06-18 22:06:27.172 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 1 ms
+  2017-06-18 22:06:27.172 INFO  ShuffleBlockFetcherIterator:58 - Getting 2 non-empty blocks out of 2 blocks
+  2017-06-18 22:06:27.174 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 2 ms
+  2017-06-18 22:06:27.289 INFO  BlockManagerInfo:58 - Removed broadcast_2_piece0 on localhost:50770 in memory (size: 1587.0 B, free: 1120.5 MB)
+  2017-06-18 22:06:27.362 INFO  Executor:58 - Finished task 1.0 in stage 3.0 (TID 5). 1203 bytes result sent to driver
+  2017-06-18 22:06:27.364 INFO  TaskSetManager:58 - Finished task 1.0 in stage 3.0 (TID 5) in 198 ms on localhost (1/2)
+  2017-06-18 22:06:27.411 INFO  Executor:58 - Finished task 0.0 in stage 3.0 (TID 4). 1203 bytes result sent to driver
+  2017-06-18 22:06:27.414 INFO  TaskSetManager:58 - Finished task 0.0 in stage 3.0 (TID 4) in 249 ms on localhost (2/2)
+  2017-06-18 22:06:27.414 INFO  TaskSchedulerImpl:58 - Removed TaskSet 3.0, whose tasks have all completed, from pool 
+  2017-06-18 22:06:27.415 INFO  DAGScheduler:58 - ResultStage 3 (count at SparkWordCount.scala:54) finished in 0.251 s
+  2017-06-18 22:06:27.416 INFO  DAGScheduler:58 - Job 1 finished: count at SparkWordCount.scala:54, took 0.276991 s
+  2017-06-18 22:06:27.417 INFO  SparkWordCount:54 - 16743
+  2017-06-18 22:06:27.439 INFO  SparkContext:58 - Invoking stop() from shutdown hook
+  2017-06-18 22:06:27.457 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/metrics/json,null}
+  2017-06-18 22:06:27.458 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+  2017-06-18 22:06:27.459 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/api,null}
+  2017-06-18 22:06:27.459 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/,null}
+  2017-06-18 22:06:27.460 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/static,null}
+  2017-06-18 22:06:27.460 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+  2017-06-18 22:06:27.461 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+  2017-06-18 22:06:27.462 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/json,null}
+  2017-06-18 22:06:27.462 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors,null}
+  2017-06-18 22:06:27.463 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/environment/json,null}
+  2017-06-18 22:06:27.464 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/environment,null}
+  2017-06-18 22:06:27.464 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+  2017-06-18 22:06:27.465 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/rdd,null}
+  2017-06-18 22:06:27.466 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/json,null}
+  2017-06-18 22:06:27.467 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage,null}
+  2017-06-18 22:06:27.467 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+  2017-06-18 22:06:27.468 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/pool,null}
+  2017-06-18 22:06:27.469 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+  2017-06-18 22:06:27.469 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage,null}
+  2017-06-18 22:06:27.470 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/json,null}
+  2017-06-18 22:06:27.470 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages,null}
+  2017-06-18 22:06:27.471 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+  2017-06-18 22:06:27.471 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/job,null}
+  2017-06-18 22:06:27.471 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/json,null}
+  2017-06-18 22:06:27.472 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs,null}
+  2017-06-18 22:06:27.531 INFO  SparkUI:58 - Stopped Spark web UI at http://192.168.0.6:4040
+  2017-06-18 22:06:27.563 INFO  MapOutputTrackerMasterEndpoint:58 - MapOutputTrackerMasterEndpoint stopped!
+  2017-06-18 22:06:27.589 INFO  MemoryStore:58 - MemoryStore cleared
+  2017-06-18 22:06:27.590 INFO  BlockManager:58 - BlockManager stopped
+  2017-06-18 22:06:27.593 INFO  BlockManagerMaster:58 - BlockManagerMaster stopped
+  2017-06-18 22:06:27.598 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:58 - OutputCommitCoordinator stopped!
+  2017-06-18 22:06:27.617 INFO  RemoteActorRefProvider$RemotingTerminator:74 - Shutting down remote daemon.
+  2017-06-18 22:06:27.623 INFO  SparkContext:58 - Successfully stopped SparkContext
+  2017-06-18 22:06:27.624 INFO  ShutdownHookManager:58 - Shutdown hook called
+  2017-06-18 22:06:27.626 INFO  ShutdownHookManager:58 - Deleting directory C:\Users\jaikumaran.g\AppData\Local\Temp\spark-42a9542f-6445-47d8-805e-e4ce54528ee8
+  2017-06-18 22:06:27.624 INFO  RemoteActorRefProvider$RemotingTerminator:74 - Remote daemon shut down; proceeding with flushing remote transports.
+  2017-06-18 22:06:53.277 INFO  SparkContext:58 - Running Spark version 1.6.1
+  2017-06-18 22:06:53.895 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  2017-06-18 22:06:54.075 INFO  SecurityManager:58 - Changing view acls to: jaikumaran.g
+  2017-06-18 22:06:54.076 INFO  SecurityManager:58 - Changing modify acls to: jaikumaran.g
+  2017-06-18 22:06:54.077 INFO  SecurityManager:58 - SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(jaikumaran.g); users with modify permissions: Set(jaikumaran.g)
+  2017-06-18 22:06:54.847 INFO  Utils:58 - Successfully started service 'sparkDriver' on port 50790.
+  2017-06-18 22:06:55.369 INFO  Slf4jLogger:80 - Slf4jLogger started
+  2017-06-18 22:06:55.431 INFO  Remoting:74 - Starting remoting
+  2017-06-18 22:06:55.722 INFO  Remoting:74 - Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.0.6:50803]
+  2017-06-18 22:06:55.732 INFO  Utils:58 - Successfully started service 'sparkDriverActorSystem' on port 50803.
+  2017-06-18 22:06:55.757 INFO  SparkEnv:58 - Registering MapOutputTracker
+  2017-06-18 22:06:55.790 INFO  SparkEnv:58 - Registering BlockManagerMaster
+  2017-06-18 22:06:55.810 INFO  DiskBlockManager:58 - Created local directory at C:\Users\jaikumaran.g\AppData\Local\Temp\blockmgr-3bab60f1-bb05-4675-9f42-7086e784d16e
+  2017-06-18 22:06:55.861 INFO  MemoryStore:58 - MemoryStore started with capacity 1120.5 MB
+  2017-06-18 22:06:55.956 INFO  SparkEnv:58 - Registering OutputCommitCoordinator
+  2017-06-18 22:06:56.267 INFO  Server:272 - jetty-8.y.z-SNAPSHOT
+  2017-06-18 22:06:56.358 INFO  AbstractConnector:338 - Started SelectChannelConnector@0.0.0.0:4040
+  2017-06-18 22:06:56.359 INFO  Utils:58 - Successfully started service 'SparkUI' on port 4040.
+  2017-06-18 22:06:56.364 INFO  SparkUI:58 - Started SparkUI at http://192.168.0.6:4040
+  2017-06-18 22:06:56.689 INFO  Executor:58 - Starting executor ID driver on host localhost
+  2017-06-18 22:06:56.775 INFO  Utils:58 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50822.
+  2017-06-18 22:06:56.776 INFO  NettyBlockTransferService:58 - Server created on 50822
+  2017-06-18 22:06:56.778 INFO  BlockManagerMaster:58 - Trying to register BlockManager
+  2017-06-18 22:06:56.782 INFO  BlockManagerMasterEndpoint:58 - Registering block manager localhost:50822 with 1120.5 MB RAM, BlockManagerId(driver, localhost, 50822)
+  2017-06-18 22:06:56.785 INFO  BlockManagerMaster:58 - Registered BlockManager
+  2017-06-18 22:06:57.518 INFO  MemoryStore:58 - Block broadcast_0 stored as values in memory (estimated size 199.2 KB, free 199.2 KB)
+  2017-06-18 22:06:57.564 INFO  MemoryStore:58 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 18.5 KB, free 217.8 KB)
+  2017-06-18 22:06:57.567 INFO  BlockManagerInfo:58 - Added broadcast_0_piece0 in memory on localhost:50822 (size: 18.5 KB, free: 1120.5 MB)
+  2017-06-18 22:06:57.574 INFO  SparkContext:58 - Created broadcast 0 from textFile at SparkWordCount.scala:39
+  2017-06-18 22:06:58.120 INFO  FileInputFormat:256 - Total input files to process : 1
+  2017-06-18 22:06:58.156 INFO  SparkContext:58 - Starting job: foreach at SparkWordCount.scala:51
+  2017-06-18 22:06:58.180 INFO  DAGScheduler:58 - Registering RDD 3 (map at SparkWordCount.scala:45)
+  2017-06-18 22:06:58.184 INFO  DAGScheduler:58 - Got job 0 (foreach at SparkWordCount.scala:51) with 3 output partitions
+  2017-06-18 22:06:58.184 INFO  DAGScheduler:58 - Final stage: ResultStage 1 (foreach at SparkWordCount.scala:51)
+  2017-06-18 22:06:58.185 INFO  DAGScheduler:58 - Parents of final stage: List(ShuffleMapStage 0)
+  2017-06-18 22:06:58.187 INFO  DAGScheduler:58 - Missing parents: List(ShuffleMapStage 0)
+  2017-06-18 22:06:58.198 INFO  DAGScheduler:58 - Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at map at SparkWordCount.scala:45), which has no missing parents
+  2017-06-18 22:06:58.257 INFO  MemoryStore:58 - Block broadcast_1 stored as values in memory (estimated size 4.1 KB, free 221.9 KB)
+  2017-06-18 22:06:58.260 INFO  MemoryStore:58 - Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 224.2 KB)
+  2017-06-18 22:06:58.261 INFO  BlockManagerInfo:58 - Added broadcast_1_piece0 in memory on localhost:50822 (size: 2.3 KB, free: 1120.5 MB)
+  2017-06-18 22:06:58.262 INFO  SparkContext:58 - Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:06:58.276 INFO  DAGScheduler:58 - Submitting 3 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at map at SparkWordCount.scala:45)
+  2017-06-18 22:06:58.279 INFO  TaskSchedulerImpl:58 - Adding task set 0.0 with 3 tasks
+  2017-06-18 22:06:58.347 INFO  TaskSetManager:58 - Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:06:58.360 INFO  TaskSetManager:58 - Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:06:58.362 INFO  TaskSetManager:58 - Starting task 2.0 in stage 0.0 (TID 2, localhost, partition 2,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:06:58.388 INFO  Executor:58 - Running task 2.0 in stage 0.0 (TID 2)
+  2017-06-18 22:06:58.388 INFO  Executor:58 - Running task 0.0 in stage 0.0 (TID 0)
+  2017-06-18 22:06:58.386 INFO  Executor:58 - Running task 1.0 in stage 0.0 (TID 1)
+  2017-06-18 22:06:58.450 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:0+33554432
+  2017-06-18 22:06:58.454 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:33554432+33554432
+  2017-06-18 22:06:58.464 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:67108864+14451503
+  2017-06-18 22:06:58.499 INFO  deprecation:1181 - mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+  2017-06-18 22:06:58.500 INFO  deprecation:1181 - mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+  2017-06-18 22:06:58.501 INFO  deprecation:1181 - mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+  2017-06-18 22:06:58.501 INFO  deprecation:1181 - mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+  2017-06-18 22:06:58.502 INFO  deprecation:1181 - mapred.job.id is deprecated. Instead, use mapreduce.job.id
+  2017-06-18 22:07:09.302 INFO  Executor:58 - Finished task 2.0 in stage 0.0 (TID 2). 2255 bytes result sent to driver
+  2017-06-18 22:07:09.319 INFO  TaskSetManager:58 - Finished task 2.0 in stage 0.0 (TID 2) in 10954 ms on localhost (1/3)
+  2017-06-18 22:07:19.391 INFO  Executor:58 - Finished task 0.0 in stage 0.0 (TID 0). 2255 bytes result sent to driver
+  2017-06-18 22:07:19.398 INFO  TaskSetManager:58 - Finished task 0.0 in stage 0.0 (TID 0) in 21086 ms on localhost (2/3)
+  2017-06-18 22:07:23.252 INFO  Executor:58 - Finished task 1.0 in stage 0.0 (TID 1). 2255 bytes result sent to driver
+  2017-06-18 22:07:23.269 INFO  DAGScheduler:58 - ShuffleMapStage 0 (map at SparkWordCount.scala:45) finished in 24.977 s
+  2017-06-18 22:07:23.270 INFO  DAGScheduler:58 - looking for newly runnable stages
+  2017-06-18 22:07:23.272 INFO  DAGScheduler:58 - running: Set()
+  2017-06-18 22:07:23.273 INFO  DAGScheduler:58 - waiting: Set(ResultStage 1)
+  2017-06-18 22:07:23.273 INFO  TaskSetManager:58 - Finished task 1.0 in stage 0.0 (TID 1) in 24913 ms on localhost (3/3)
+  2017-06-18 22:07:23.274 INFO  DAGScheduler:58 - failed: Set()
+  2017-06-18 22:07:23.276 INFO  TaskSchedulerImpl:58 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+  2017-06-18 22:07:23.276 INFO  DAGScheduler:58 - Submitting ResultStage 1 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49), which has no missing parents
+  2017-06-18 22:07:23.293 INFO  MemoryStore:58 - Block broadcast_2 stored as values in memory (estimated size 2.5 KB, free 226.7 KB)
+  2017-06-18 22:07:23.296 INFO  MemoryStore:58 - Block broadcast_2_piece0 stored as bytes in memory (estimated size 1587.0 B, free 228.2 KB)
+  2017-06-18 22:07:23.299 INFO  BlockManagerInfo:58 - Added broadcast_2_piece0 in memory on localhost:50822 (size: 1587.0 B, free: 1120.5 MB)
+  2017-06-18 22:07:23.300 INFO  SparkContext:58 - Created broadcast 2 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:07:23.302 INFO  DAGScheduler:58 - Submitting 3 missing tasks from ResultStage 1 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49)
+  2017-06-18 22:07:23.303 INFO  TaskSchedulerImpl:58 - Adding task set 1.0 with 3 tasks
+  2017-06-18 22:07:23.328 INFO  TaskSetManager:58 - Starting task 0.0 in stage 1.0 (TID 3, localhost, partition 0,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:07:23.329 INFO  TaskSetManager:58 - Starting task 1.0 in stage 1.0 (TID 4, localhost, partition 1,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:07:23.330 INFO  TaskSetManager:58 - Starting task 2.0 in stage 1.0 (TID 5, localhost, partition 2,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:07:23.331 INFO  Executor:58 - Running task 1.0 in stage 1.0 (TID 4)
+  2017-06-18 22:07:23.331 INFO  Executor:58 - Running task 2.0 in stage 1.0 (TID 5)
+  2017-06-18 22:07:23.331 INFO  Executor:58 - Running task 0.0 in stage 1.0 (TID 3)
+  2017-06-18 22:07:23.359 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:07:23.360 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:07:23.360 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:07:23.363 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 11 ms
+  2017-06-18 22:07:23.363 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 11 ms
+  2017-06-18 22:07:23.363 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 11 ms
+  2017-06-18 22:07:35.243 INFO  BlockManagerInfo:58 - Removed broadcast_1_piece0 on localhost:50822 in memory (size: 2.3 KB, free: 1120.5 MB)
+  2017-06-18 22:07:48.184 INFO  Executor:58 - Finished task 2.0 in stage 1.0 (TID 5). 1165 bytes result sent to driver
+  2017-06-18 22:07:48.205 INFO  TaskSetManager:58 - Finished task 2.0 in stage 1.0 (TID 5) in 24874 ms on localhost (1/3)
+  2017-06-18 22:07:52.739 INFO  Executor:58 - Finished task 1.0 in stage 1.0 (TID 4). 1165 bytes result sent to driver
+  2017-06-18 22:07:52.752 INFO  TaskSetManager:58 - Finished task 1.0 in stage 1.0 (TID 4) in 29423 ms on localhost (2/3)
+  2017-06-18 22:07:52.996 INFO  Executor:58 - Finished task 0.0 in stage 1.0 (TID 3). 1165 bytes result sent to driver
+  2017-06-18 22:07:52.997 INFO  TaskSetManager:58 - Finished task 0.0 in stage 1.0 (TID 3) in 29673 ms on localhost (3/3)
+  2017-06-18 22:07:52.998 INFO  TaskSchedulerImpl:58 - Removed TaskSet 1.0, whose tasks have all completed, from pool 
+  2017-06-18 22:07:52.998 INFO  DAGScheduler:58 - ResultStage 1 (foreach at SparkWordCount.scala:51) finished in 29.674 s
+  2017-06-18 22:07:53.113 INFO  DAGScheduler:58 - Job 0 finished: foreach at SparkWordCount.scala:51, took 54.955885 s
+  2017-06-18 22:07:53.250 INFO  SparkWordCount:52 - StopWatch './data/majestic_million.csv': running time (millis) = 1126
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00621  055%  textfile
+00006  001%  flatMap
+00006  001%  map
+00493  044%  reduceByKey
+
+  2017-06-18 22:07:53.303 INFO  SparkContext:58 - Starting job: count at SparkWordCount.scala:54
+  2017-06-18 22:07:53.355 INFO  MapOutputTrackerMaster:58 - Size of output statuses for shuffle 0 is 163 bytes
+  2017-06-18 22:07:53.398 INFO  DAGScheduler:58 - Got job 1 (count at SparkWordCount.scala:54) with 3 output partitions
+  2017-06-18 22:07:53.398 INFO  DAGScheduler:58 - Final stage: ResultStage 3 (count at SparkWordCount.scala:54)
+  2017-06-18 22:07:53.398 INFO  DAGScheduler:58 - Parents of final stage: List(ShuffleMapStage 2)
+  2017-06-18 22:07:53.399 INFO  DAGScheduler:58 - Missing parents: List()
+  2017-06-18 22:07:53.399 INFO  DAGScheduler:58 - Submitting ResultStage 3 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49), which has no missing parents
+  2017-06-18 22:07:53.404 INFO  MemoryStore:58 - Block broadcast_3 stored as values in memory (estimated size 2.4 KB, free 224.2 KB)
+  2017-06-18 22:07:53.408 INFO  MemoryStore:58 - Block broadcast_3_piece0 stored as bytes in memory (estimated size 1549.0 B, free 225.7 KB)
+  2017-06-18 22:07:53.408 INFO  BlockManagerInfo:58 - Added broadcast_3_piece0 in memory on localhost:50822 (size: 1549.0 B, free: 1120.5 MB)
+  2017-06-18 22:07:53.409 INFO  SparkContext:58 - Created broadcast 3 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:07:53.409 INFO  DAGScheduler:58 - Submitting 3 missing tasks from ResultStage 3 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49)
+  2017-06-18 22:07:53.409 INFO  TaskSchedulerImpl:58 - Adding task set 3.0 with 3 tasks
+  2017-06-18 22:07:53.410 INFO  TaskSetManager:58 - Starting task 0.0 in stage 3.0 (TID 6, localhost, partition 0,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:07:53.411 INFO  TaskSetManager:58 - Starting task 1.0 in stage 3.0 (TID 7, localhost, partition 1,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:07:53.412 INFO  TaskSetManager:58 - Starting task 2.0 in stage 3.0 (TID 8, localhost, partition 2,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:07:53.414 INFO  Executor:58 - Running task 1.0 in stage 3.0 (TID 7)
+  2017-06-18 22:07:53.414 INFO  Executor:58 - Running task 2.0 in stage 3.0 (TID 8)
+  2017-06-18 22:07:53.414 INFO  Executor:58 - Running task 0.0 in stage 3.0 (TID 6)
+  2017-06-18 22:07:53.416 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:07:53.417 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 1 ms
+  2017-06-18 22:07:53.418 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:07:53.418 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 0 ms
+  2017-06-18 22:07:53.424 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:07:53.424 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 0 ms
+  2017-06-18 22:07:55.462 INFO  Executor:58 - Finished task 0.0 in stage 3.0 (TID 6). 1203 bytes result sent to driver
+  2017-06-18 22:07:55.469 INFO  TaskSetManager:58 - Finished task 0.0 in stage 3.0 (TID 6) in 2055 ms on localhost (1/3)
+  2017-06-18 22:07:55.487 INFO  Executor:58 - Finished task 1.0 in stage 3.0 (TID 7). 1203 bytes result sent to driver
+  2017-06-18 22:07:55.488 INFO  TaskSetManager:58 - Finished task 1.0 in stage 3.0 (TID 7) in 2077 ms on localhost (2/3)
+  2017-06-18 22:07:55.534 INFO  Executor:58 - Finished task 2.0 in stage 3.0 (TID 8). 1203 bytes result sent to driver
+  2017-06-18 22:07:55.536 INFO  TaskSetManager:58 - Finished task 2.0 in stage 3.0 (TID 8) in 2125 ms on localhost (3/3)
+  2017-06-18 22:07:55.537 INFO  TaskSchedulerImpl:58 - Removed TaskSet 3.0, whose tasks have all completed, from pool 
+  2017-06-18 22:07:55.537 INFO  DAGScheduler:58 - ResultStage 3 (count at SparkWordCount.scala:54) finished in 2.127 s
+  2017-06-18 22:07:55.538 INFO  DAGScheduler:58 - Job 1 finished: count at SparkWordCount.scala:54, took 2.233317 s
+  2017-06-18 22:07:55.538 INFO  SparkWordCount:54 - 2004212
+  2017-06-18 22:07:55.625 INFO  SparkContext:58 - Invoking stop() from shutdown hook
+  2017-06-18 22:07:55.781 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/metrics/json,null}
+  2017-06-18 22:07:55.782 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+  2017-06-18 22:07:55.785 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/api,null}
+  2017-06-18 22:07:55.785 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/,null}
+  2017-06-18 22:07:55.786 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/static,null}
+  2017-06-18 22:07:55.786 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+  2017-06-18 22:07:55.786 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+  2017-06-18 22:07:55.787 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/json,null}
+  2017-06-18 22:07:55.787 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors,null}
+  2017-06-18 22:07:55.788 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/environment/json,null}
+  2017-06-18 22:07:55.789 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/environment,null}
+  2017-06-18 22:07:55.789 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+  2017-06-18 22:07:55.790 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/rdd,null}
+  2017-06-18 22:07:55.790 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/json,null}
+  2017-06-18 22:07:55.791 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage,null}
+  2017-06-18 22:07:55.792 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+  2017-06-18 22:07:55.793 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/pool,null}
+  2017-06-18 22:07:55.794 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+  2017-06-18 22:07:55.794 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage,null}
+  2017-06-18 22:07:55.795 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/json,null}
+  2017-06-18 22:07:55.796 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages,null}
+  2017-06-18 22:07:55.799 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+  2017-06-18 22:07:55.802 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/job,null}
+  2017-06-18 22:07:55.803 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/json,null}
+  2017-06-18 22:07:55.804 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs,null}
+  2017-06-18 22:07:55.880 INFO  SparkUI:58 - Stopped Spark web UI at http://192.168.0.6:4040
+  2017-06-18 22:07:56.410 INFO  MapOutputTrackerMasterEndpoint:58 - MapOutputTrackerMasterEndpoint stopped!
+  2017-06-18 22:07:56.521 INFO  MemoryStore:58 - MemoryStore cleared
+  2017-06-18 22:07:56.523 INFO  BlockManager:58 - BlockManager stopped
+  2017-06-18 22:07:56.524 INFO  BlockManagerMaster:58 - BlockManagerMaster stopped
+  2017-06-18 22:07:56.571 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:58 - OutputCommitCoordinator stopped!
+  2017-06-18 22:07:56.577 INFO  SparkContext:58 - Successfully stopped SparkContext
+  2017-06-18 22:07:56.612 INFO  ShutdownHookManager:58 - Shutdown hook called
+  2017-06-18 22:07:56.614 INFO  ShutdownHookManager:58 - Deleting directory C:\Users\jaikumaran.g\AppData\Local\Temp\spark-03fc0acb-1624-4d8a-989a-f3dcfbd4280f
+  2017-06-18 22:09:33.441 INFO  SparkContext:58 - Running Spark version 1.6.1
+  2017-06-18 22:09:34.152 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  2017-06-18 22:09:34.380 INFO  SecurityManager:58 - Changing view acls to: jaikumaran.g
+  2017-06-18 22:09:34.381 INFO  SecurityManager:58 - Changing modify acls to: jaikumaran.g
+  2017-06-18 22:09:34.382 INFO  SecurityManager:58 - SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(jaikumaran.g); users with modify permissions: Set(jaikumaran.g)
+  2017-06-18 22:09:35.253 INFO  Utils:58 - Successfully started service 'sparkDriver' on port 50859.
+  2017-06-18 22:09:35.848 INFO  Slf4jLogger:80 - Slf4jLogger started
+  2017-06-18 22:09:35.915 INFO  Remoting:74 - Starting remoting
+  2017-06-18 22:09:36.213 INFO  Remoting:74 - Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.0.6:50873]
+  2017-06-18 22:09:36.222 INFO  Utils:58 - Successfully started service 'sparkDriverActorSystem' on port 50873.
+  2017-06-18 22:09:36.242 INFO  SparkEnv:58 - Registering MapOutputTracker
+  2017-06-18 22:09:36.269 INFO  SparkEnv:58 - Registering BlockManagerMaster
+  2017-06-18 22:09:36.289 INFO  DiskBlockManager:58 - Created local directory at C:\Users\jaikumaran.g\AppData\Local\Temp\blockmgr-c0212b71-3e25-4741-8d9f-e010631b42f8
+  2017-06-18 22:09:36.316 INFO  MemoryStore:58 - MemoryStore started with capacity 1120.5 MB
+  2017-06-18 22:09:36.423 INFO  SparkEnv:58 - Registering OutputCommitCoordinator
+  2017-06-18 22:09:36.751 INFO  Server:272 - jetty-8.y.z-SNAPSHOT
+  2017-06-18 22:09:36.829 INFO  AbstractConnector:338 - Started SelectChannelConnector@0.0.0.0:4040
+  2017-06-18 22:09:36.829 INFO  Utils:58 - Successfully started service 'SparkUI' on port 4040.
+  2017-06-18 22:09:36.833 INFO  SparkUI:58 - Started SparkUI at http://192.168.0.6:4040
+  2017-06-18 22:09:37.031 INFO  Executor:58 - Starting executor ID driver on host localhost
+  2017-06-18 22:09:37.112 INFO  Utils:58 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50892.
+  2017-06-18 22:09:37.113 INFO  NettyBlockTransferService:58 - Server created on 50892
+  2017-06-18 22:09:37.115 INFO  BlockManagerMaster:58 - Trying to register BlockManager
+  2017-06-18 22:09:37.119 INFO  BlockManagerMasterEndpoint:58 - Registering block manager localhost:50892 with 1120.5 MB RAM, BlockManagerId(driver, localhost, 50892)
+  2017-06-18 22:09:37.122 INFO  BlockManagerMaster:58 - Registered BlockManager
+  2017-06-18 22:09:38.014 INFO  MemoryStore:58 - Block broadcast_0 stored as values in memory (estimated size 199.2 KB, free 199.2 KB)
+  2017-06-18 22:09:38.066 INFO  MemoryStore:58 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 18.5 KB, free 217.8 KB)
+  2017-06-18 22:09:38.069 INFO  BlockManagerInfo:58 - Added broadcast_0_piece0 in memory on localhost:50892 (size: 18.5 KB, free: 1120.5 MB)
+  2017-06-18 22:09:38.076 INFO  SparkContext:58 - Created broadcast 0 from textFile at SparkWordCount.scala:39
+  2017-06-18 22:09:38.645 INFO  FileInputFormat:256 - Total input files to process : 1
+  2017-06-18 22:09:38.676 INFO  SparkWordCount:54 - StopWatch './data/majestic_million.csv': running time (millis) = 1160
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00624  054%  textfile
+00006  001%  flatMap
+00011  001%  map
+00515  044%  reduceByKey
+00004  000%  priting via map
+
+  2017-06-18 22:09:38.685 INFO  SparkContext:58 - Starting job: count at SparkWordCount.scala:56
+  2017-06-18 22:09:38.714 INFO  DAGScheduler:58 - Registering RDD 3 (map at SparkWordCount.scala:45)
+  2017-06-18 22:09:38.718 INFO  DAGScheduler:58 - Got job 0 (count at SparkWordCount.scala:56) with 3 output partitions
+  2017-06-18 22:09:38.719 INFO  DAGScheduler:58 - Final stage: ResultStage 1 (count at SparkWordCount.scala:56)
+  2017-06-18 22:09:38.720 INFO  DAGScheduler:58 - Parents of final stage: List(ShuffleMapStage 0)
+  2017-06-18 22:09:38.722 INFO  DAGScheduler:58 - Missing parents: List(ShuffleMapStage 0)
+  2017-06-18 22:09:38.735 INFO  DAGScheduler:58 - Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at map at SparkWordCount.scala:45), which has no missing parents
+  2017-06-18 22:09:38.857 INFO  MemoryStore:58 - Block broadcast_1 stored as values in memory (estimated size 4.1 KB, free 221.9 KB)
+  2017-06-18 22:09:38.867 INFO  MemoryStore:58 - Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 224.2 KB)
+  2017-06-18 22:09:38.868 INFO  BlockManagerInfo:58 - Added broadcast_1_piece0 in memory on localhost:50892 (size: 2.3 KB, free: 1120.5 MB)
+  2017-06-18 22:09:38.869 INFO  SparkContext:58 - Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:09:38.875 INFO  DAGScheduler:58 - Submitting 3 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at map at SparkWordCount.scala:45)
+  2017-06-18 22:09:38.884 INFO  TaskSchedulerImpl:58 - Adding task set 0.0 with 3 tasks
+  2017-06-18 22:09:39.013 INFO  TaskSetManager:58 - Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:09:39.044 INFO  TaskSetManager:58 - Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:09:39.045 INFO  TaskSetManager:58 - Starting task 2.0 in stage 0.0 (TID 2, localhost, partition 2,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:09:39.093 INFO  Executor:58 - Running task 1.0 in stage 0.0 (TID 1)
+  2017-06-18 22:09:39.110 INFO  Executor:58 - Running task 2.0 in stage 0.0 (TID 2)
+  2017-06-18 22:09:39.106 INFO  Executor:58 - Running task 0.0 in stage 0.0 (TID 0)
+  2017-06-18 22:09:39.188 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:0+33554432
+  2017-06-18 22:09:39.205 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:33554432+33554432
+  2017-06-18 22:09:39.188 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:67108864+14451503
+  2017-06-18 22:09:39.230 INFO  deprecation:1181 - mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+  2017-06-18 22:09:39.231 INFO  deprecation:1181 - mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+  2017-06-18 22:09:39.231 INFO  deprecation:1181 - mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+  2017-06-18 22:09:39.233 INFO  deprecation:1181 - mapred.job.id is deprecated. Instead, use mapreduce.job.id
+  2017-06-18 22:09:39.233 INFO  deprecation:1181 - mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+  2017-06-18 22:09:43.863 INFO  Executor:58 - Finished task 2.0 in stage 0.0 (TID 2). 2255 bytes result sent to driver
+  2017-06-18 22:09:43.874 INFO  TaskSetManager:58 - Finished task 2.0 in stage 0.0 (TID 2) in 4828 ms on localhost (1/3)
+  2017-06-18 22:09:52.037 INFO  Executor:58 - Finished task 0.0 in stage 0.0 (TID 0). 2255 bytes result sent to driver
+  2017-06-18 22:09:52.041 INFO  TaskSetManager:58 - Finished task 0.0 in stage 0.0 (TID 0) in 13076 ms on localhost (2/3)
+  2017-06-18 22:09:53.081 INFO  Executor:58 - Finished task 1.0 in stage 0.0 (TID 1). 2255 bytes result sent to driver
+  2017-06-18 22:09:53.083 INFO  TaskSetManager:58 - Finished task 1.0 in stage 0.0 (TID 1) in 14042 ms on localhost (3/3)
+  2017-06-18 22:09:53.085 INFO  DAGScheduler:58 - ShuffleMapStage 0 (map at SparkWordCount.scala:45) finished in 14.163 s
+  2017-06-18 22:09:53.086 INFO  DAGScheduler:58 - looking for newly runnable stages
+  2017-06-18 22:09:53.088 INFO  DAGScheduler:58 - running: Set()
+  2017-06-18 22:09:53.087 INFO  TaskSchedulerImpl:58 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+  2017-06-18 22:09:53.088 INFO  DAGScheduler:58 - waiting: Set(ResultStage 1)
+  2017-06-18 22:09:53.089 INFO  DAGScheduler:58 - failed: Set()
+  2017-06-18 22:09:53.091 INFO  DAGScheduler:58 - Submitting ResultStage 1 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49), which has no missing parents
+  2017-06-18 22:09:53.100 INFO  MemoryStore:58 - Block broadcast_2 stored as values in memory (estimated size 2.4 KB, free 226.6 KB)
+  2017-06-18 22:09:53.102 INFO  MemoryStore:58 - Block broadcast_2_piece0 stored as bytes in memory (estimated size 1549.0 B, free 228.1 KB)
+  2017-06-18 22:09:53.250 INFO  BlockManagerInfo:58 - Added broadcast_2_piece0 in memory on localhost:50892 (size: 1549.0 B, free: 1120.5 MB)
+  2017-06-18 22:09:53.250 INFO  SparkContext:58 - Created broadcast 2 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:09:53.252 INFO  DAGScheduler:58 - Submitting 3 missing tasks from ResultStage 1 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49)
+  2017-06-18 22:09:53.252 INFO  TaskSchedulerImpl:58 - Adding task set 1.0 with 3 tasks
+  2017-06-18 22:09:53.261 INFO  TaskSetManager:58 - Starting task 0.0 in stage 1.0 (TID 3, localhost, partition 0,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:09:53.262 INFO  TaskSetManager:58 - Starting task 1.0 in stage 1.0 (TID 4, localhost, partition 1,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:09:53.263 INFO  TaskSetManager:58 - Starting task 2.0 in stage 1.0 (TID 5, localhost, partition 2,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:09:53.263 INFO  Executor:58 - Running task 0.0 in stage 1.0 (TID 3)
+  2017-06-18 22:09:53.263 INFO  Executor:58 - Running task 2.0 in stage 1.0 (TID 5)
+  2017-06-18 22:09:53.263 INFO  Executor:58 - Running task 1.0 in stage 1.0 (TID 4)
+  2017-06-18 22:09:53.283 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:09:53.283 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:09:53.284 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:09:53.288 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 12 ms
+  2017-06-18 22:09:53.288 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 12 ms
+  2017-06-18 22:09:53.288 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 12 ms
+  2017-06-18 22:09:56.709 INFO  BlockManagerInfo:58 - Removed broadcast_1_piece0 on localhost:50892 in memory (size: 2.3 KB, free: 1120.5 MB)
+  2017-06-18 22:09:57.049 INFO  Executor:58 - Finished task 0.0 in stage 1.0 (TID 3). 1203 bytes result sent to driver
+  2017-06-18 22:09:57.087 INFO  TaskSetManager:58 - Finished task 0.0 in stage 1.0 (TID 3) in 3810 ms on localhost (1/3)
+  2017-06-18 22:09:57.203 INFO  Executor:58 - Finished task 2.0 in stage 1.0 (TID 5). 1203 bytes result sent to driver
+  2017-06-18 22:09:57.205 INFO  TaskSetManager:58 - Finished task 2.0 in stage 1.0 (TID 5) in 3943 ms on localhost (2/3)
+  2017-06-18 22:09:57.213 INFO  Executor:58 - Finished task 1.0 in stage 1.0 (TID 4). 1203 bytes result sent to driver
+  2017-06-18 22:09:57.214 INFO  TaskSetManager:58 - Finished task 1.0 in stage 1.0 (TID 4) in 3953 ms on localhost (3/3)
+  2017-06-18 22:09:57.214 INFO  TaskSchedulerImpl:58 - Removed TaskSet 1.0, whose tasks have all completed, from pool 
+  2017-06-18 22:09:57.215 INFO  DAGScheduler:58 - ResultStage 1 (count at SparkWordCount.scala:56) finished in 3.956 s
+  2017-06-18 22:09:57.228 INFO  DAGScheduler:58 - Job 0 finished: count at SparkWordCount.scala:56, took 18.541466 s
+  2017-06-18 22:09:57.234 INFO  SparkWordCount:56 - 2004212
+  2017-06-18 22:09:57.239 INFO  SparkContext:58 - Invoking stop() from shutdown hook
+  2017-06-18 22:09:57.256 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/metrics/json,null}
+  2017-06-18 22:09:57.258 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+  2017-06-18 22:09:57.259 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/api,null}
+  2017-06-18 22:09:57.260 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/,null}
+  2017-06-18 22:09:57.261 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/static,null}
+  2017-06-18 22:09:57.262 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+  2017-06-18 22:09:57.262 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+  2017-06-18 22:09:57.263 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/json,null}
+  2017-06-18 22:09:57.264 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors,null}
+  2017-06-18 22:09:57.265 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/environment/json,null}
+  2017-06-18 22:09:57.266 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/environment,null}
+  2017-06-18 22:09:57.266 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+  2017-06-18 22:09:57.267 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/rdd,null}
+  2017-06-18 22:09:57.267 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/json,null}
+  2017-06-18 22:09:57.268 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage,null}
+  2017-06-18 22:09:57.268 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+  2017-06-18 22:09:57.269 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/pool,null}
+  2017-06-18 22:09:57.269 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+  2017-06-18 22:09:57.270 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage,null}
+  2017-06-18 22:09:57.270 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/json,null}
+  2017-06-18 22:09:57.271 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages,null}
+  2017-06-18 22:09:57.271 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+  2017-06-18 22:09:57.271 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/job,null}
+  2017-06-18 22:09:57.272 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/json,null}
+  2017-06-18 22:09:57.272 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs,null}
+  2017-06-18 22:09:57.324 INFO  SparkUI:58 - Stopped Spark web UI at http://192.168.0.6:4040
+  2017-06-18 22:09:57.346 INFO  MapOutputTrackerMasterEndpoint:58 - MapOutputTrackerMasterEndpoint stopped!
+  2017-06-18 22:09:57.367 INFO  MemoryStore:58 - MemoryStore cleared
+  2017-06-18 22:09:57.368 INFO  BlockManager:58 - BlockManager stopped
+  2017-06-18 22:09:57.369 INFO  BlockManagerMaster:58 - BlockManagerMaster stopped
+  2017-06-18 22:09:57.372 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:58 - OutputCommitCoordinator stopped!
+  2017-06-18 22:09:57.383 INFO  SparkContext:58 - Successfully stopped SparkContext
+  2017-06-18 22:09:57.383 INFO  ShutdownHookManager:58 - Shutdown hook called
+  2017-06-18 22:09:57.384 INFO  RemoteActorRefProvider$RemotingTerminator:74 - Shutting down remote daemon.
+  2017-06-18 22:09:57.386 INFO  ShutdownHookManager:58 - Deleting directory C:\Users\jaikumaran.g\AppData\Local\Temp\spark-1387ea2c-5a4f-400f-b47a-7fa3e9ea6439
+  2017-06-18 22:09:57.387 INFO  RemoteActorRefProvider$RemotingTerminator:74 - Remote daemon shut down; proceeding with flushing remote transports.
+  2017-06-18 22:11:13.816 INFO  SparkContext:58 - Running Spark version 1.6.1
+  2017-06-18 22:11:14.387 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  2017-06-18 22:11:14.570 INFO  SecurityManager:58 - Changing view acls to: jaikumaran.g
+  2017-06-18 22:11:14.570 INFO  SecurityManager:58 - Changing modify acls to: jaikumaran.g
+  2017-06-18 22:11:14.571 INFO  SecurityManager:58 - SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(jaikumaran.g); users with modify permissions: Set(jaikumaran.g)
+  2017-06-18 22:11:15.360 INFO  Utils:58 - Successfully started service 'sparkDriver' on port 64375.
+  2017-06-18 22:11:15.917 INFO  Slf4jLogger:80 - Slf4jLogger started
+  2017-06-18 22:11:15.982 INFO  Remoting:74 - Starting remoting
+  2017-06-18 22:11:16.221 INFO  Remoting:74 - Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@192.168.0.6:64388]
+  2017-06-18 22:11:16.228 INFO  Utils:58 - Successfully started service 'sparkDriverActorSystem' on port 64388.
+  2017-06-18 22:11:16.249 INFO  SparkEnv:58 - Registering MapOutputTracker
+  2017-06-18 22:11:16.275 INFO  SparkEnv:58 - Registering BlockManagerMaster
+  2017-06-18 22:11:16.292 INFO  DiskBlockManager:58 - Created local directory at C:\Users\jaikumaran.g\AppData\Local\Temp\blockmgr-bf96e5fa-8c91-492c-b011-29459cc69cc5
+  2017-06-18 22:11:16.321 INFO  MemoryStore:58 - MemoryStore started with capacity 1120.5 MB
+  2017-06-18 22:11:16.439 INFO  SparkEnv:58 - Registering OutputCommitCoordinator
+  2017-06-18 22:11:16.785 INFO  Server:272 - jetty-8.y.z-SNAPSHOT
+  2017-06-18 22:11:16.861 INFO  AbstractConnector:338 - Started SelectChannelConnector@0.0.0.0:4040
+  2017-06-18 22:11:16.862 INFO  Utils:58 - Successfully started service 'SparkUI' on port 4040.
+  2017-06-18 22:11:16.868 INFO  SparkUI:58 - Started SparkUI at http://192.168.0.6:4040
+  2017-06-18 22:11:17.114 INFO  Executor:58 - Starting executor ID driver on host localhost
+  2017-06-18 22:11:17.247 INFO  Utils:58 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 64407.
+  2017-06-18 22:11:17.252 INFO  NettyBlockTransferService:58 - Server created on 64407
+  2017-06-18 22:11:17.255 INFO  BlockManagerMaster:58 - Trying to register BlockManager
+  2017-06-18 22:11:17.262 INFO  BlockManagerMasterEndpoint:58 - Registering block manager localhost:64407 with 1120.5 MB RAM, BlockManagerId(driver, localhost, 64407)
+  2017-06-18 22:11:17.267 INFO  BlockManagerMaster:58 - Registered BlockManager
+  2017-06-18 22:11:18.100 INFO  MemoryStore:58 - Block broadcast_0 stored as values in memory (estimated size 199.2 KB, free 199.2 KB)
+  2017-06-18 22:11:18.158 INFO  MemoryStore:58 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 18.5 KB, free 217.8 KB)
+  2017-06-18 22:11:18.160 INFO  BlockManagerInfo:58 - Added broadcast_0_piece0 in memory on localhost:64407 (size: 18.5 KB, free: 1120.5 MB)
+  2017-06-18 22:11:18.169 INFO  SparkContext:58 - Created broadcast 0 from textFile at SparkWordCount.scala:39
+  2017-06-18 22:11:18.704 INFO  FileInputFormat:256 - Total input files to process : 1
+  2017-06-18 22:11:18.749 INFO  SparkContext:58 - Starting job: foreach at SparkWordCount.scala:53
+  2017-06-18 22:11:18.775 INFO  DAGScheduler:58 - Registering RDD 3 (map at SparkWordCount.scala:45)
+  2017-06-18 22:11:18.777 INFO  DAGScheduler:58 - Got job 0 (foreach at SparkWordCount.scala:53) with 3 output partitions
+  2017-06-18 22:11:18.778 INFO  DAGScheduler:58 - Final stage: ResultStage 1 (foreach at SparkWordCount.scala:53)
+  2017-06-18 22:11:18.778 INFO  DAGScheduler:58 - Parents of final stage: List(ShuffleMapStage 0)
+  2017-06-18 22:11:18.780 INFO  DAGScheduler:58 - Missing parents: List(ShuffleMapStage 0)
+  2017-06-18 22:11:18.791 INFO  DAGScheduler:58 - Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at map at SparkWordCount.scala:45), which has no missing parents
+  2017-06-18 22:11:18.856 INFO  MemoryStore:58 - Block broadcast_1 stored as values in memory (estimated size 4.1 KB, free 221.9 KB)
+  2017-06-18 22:11:18.859 INFO  MemoryStore:58 - Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 224.2 KB)
+  2017-06-18 22:11:18.860 INFO  BlockManagerInfo:58 - Added broadcast_1_piece0 in memory on localhost:64407 (size: 2.3 KB, free: 1120.5 MB)
+  2017-06-18 22:11:18.861 INFO  SparkContext:58 - Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:11:18.864 INFO  DAGScheduler:58 - Submitting 3 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at map at SparkWordCount.scala:45)
+  2017-06-18 22:11:18.868 INFO  TaskSchedulerImpl:58 - Adding task set 0.0 with 3 tasks
+  2017-06-18 22:11:18.972 INFO  TaskSetManager:58 - Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:11:18.978 INFO  TaskSetManager:58 - Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:11:18.982 INFO  TaskSetManager:58 - Starting task 2.0 in stage 0.0 (TID 2, localhost, partition 2,PROCESS_LOCAL, 2179 bytes)
+  2017-06-18 22:11:19.000 INFO  Executor:58 - Running task 2.0 in stage 0.0 (TID 2)
+  2017-06-18 22:11:19.000 INFO  Executor:58 - Running task 0.0 in stage 0.0 (TID 0)
+  2017-06-18 22:11:19.000 INFO  Executor:58 - Running task 1.0 in stage 0.0 (TID 1)
+  2017-06-18 22:11:19.096 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:0+33554432
+  2017-06-18 22:11:19.096 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:67108864+14451503
+  2017-06-18 22:11:19.096 INFO  HadoopRDD:58 - Input split: file:/C:/Users/jaikumaran.g/git/MyPersonalSample2/JavaExamples/data/majestic_million.csv:33554432+33554432
+  2017-06-18 22:11:19.145 INFO  deprecation:1181 - mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+  2017-06-18 22:11:19.146 INFO  deprecation:1181 - mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+  2017-06-18 22:11:19.146 INFO  deprecation:1181 - mapred.job.id is deprecated. Instead, use mapreduce.job.id
+  2017-06-18 22:11:19.145 INFO  deprecation:1181 - mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+  2017-06-18 22:11:19.146 INFO  deprecation:1181 - mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+  2017-06-18 22:11:25.180 INFO  Executor:58 - Finished task 2.0 in stage 0.0 (TID 2). 2255 bytes result sent to driver
+  2017-06-18 22:11:25.194 INFO  TaskSetManager:58 - Finished task 2.0 in stage 0.0 (TID 2) in 6211 ms on localhost (1/3)
+  2017-06-18 22:11:29.185 INFO  Executor:58 - Finished task 0.0 in stage 0.0 (TID 0). 2255 bytes result sent to driver
+  2017-06-18 22:11:29.188 INFO  TaskSetManager:58 - Finished task 0.0 in stage 0.0 (TID 0) in 10267 ms on localhost (2/3)
+  2017-06-18 22:11:30.038 INFO  Executor:58 - Finished task 1.0 in stage 0.0 (TID 1). 2255 bytes result sent to driver
+  2017-06-18 22:11:30.059 INFO  TaskSetManager:58 - Finished task 1.0 in stage 0.0 (TID 1) in 11082 ms on localhost (3/3)
+  2017-06-18 22:11:30.060 INFO  DAGScheduler:58 - ShuffleMapStage 0 (map at SparkWordCount.scala:45) finished in 11.180 s
+  2017-06-18 22:11:30.061 INFO  TaskSchedulerImpl:58 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+  2017-06-18 22:11:30.062 INFO  DAGScheduler:58 - looking for newly runnable stages
+  2017-06-18 22:11:30.062 INFO  DAGScheduler:58 - running: Set()
+  2017-06-18 22:11:30.063 INFO  DAGScheduler:58 - waiting: Set(ResultStage 1)
+  2017-06-18 22:11:30.064 INFO  DAGScheduler:58 - failed: Set()
+  2017-06-18 22:11:30.066 INFO  DAGScheduler:58 - Submitting ResultStage 1 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49), which has no missing parents
+  2017-06-18 22:11:30.075 INFO  MemoryStore:58 - Block broadcast_2 stored as values in memory (estimated size 2.5 KB, free 226.7 KB)
+  2017-06-18 22:11:30.076 INFO  MemoryStore:58 - Block broadcast_2_piece0 stored as bytes in memory (estimated size 1587.0 B, free 228.2 KB)
+  2017-06-18 22:11:30.077 INFO  BlockManagerInfo:58 - Added broadcast_2_piece0 in memory on localhost:64407 (size: 1587.0 B, free: 1120.5 MB)
+  2017-06-18 22:11:30.078 INFO  SparkContext:58 - Created broadcast 2 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:11:30.079 INFO  DAGScheduler:58 - Submitting 3 missing tasks from ResultStage 1 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49)
+  2017-06-18 22:11:30.080 INFO  TaskSchedulerImpl:58 - Adding task set 1.0 with 3 tasks
+  2017-06-18 22:11:30.087 INFO  TaskSetManager:58 - Starting task 0.0 in stage 1.0 (TID 3, localhost, partition 0,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:11:30.088 INFO  TaskSetManager:58 - Starting task 1.0 in stage 1.0 (TID 4, localhost, partition 1,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:11:30.088 INFO  TaskSetManager:58 - Starting task 2.0 in stage 1.0 (TID 5, localhost, partition 2,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:11:30.089 INFO  Executor:58 - Running task 1.0 in stage 1.0 (TID 4)
+  2017-06-18 22:11:30.089 INFO  Executor:58 - Running task 2.0 in stage 1.0 (TID 5)
+  2017-06-18 22:11:30.089 INFO  Executor:58 - Running task 0.0 in stage 1.0 (TID 3)
+  2017-06-18 22:11:30.106 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:11:30.106 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:11:30.106 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:11:30.108 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 6 ms
+  2017-06-18 22:11:30.108 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 6 ms
+  2017-06-18 22:11:30.108 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 6 ms
+  2017-06-18 22:11:32.761 INFO  BlockManagerInfo:58 - Removed broadcast_1_piece0 on localhost:64407 in memory (size: 2.3 KB, free: 1120.5 MB)
+  2017-06-18 22:11:55.240 INFO  Executor:58 - Finished task 0.0 in stage 1.0 (TID 3). 1165 bytes result sent to driver
+  2017-06-18 22:11:55.275 INFO  TaskSetManager:58 - Finished task 0.0 in stage 1.0 (TID 3) in 25188 ms on localhost (1/3)
+  2017-06-18 22:11:55.873 INFO  Executor:58 - Finished task 2.0 in stage 1.0 (TID 5). 1165 bytes result sent to driver
+  2017-06-18 22:11:55.897 INFO  TaskSetManager:58 - Finished task 2.0 in stage 1.0 (TID 5) in 25809 ms on localhost (2/3)
+  2017-06-18 22:11:56.742 INFO  Executor:58 - Finished task 1.0 in stage 1.0 (TID 4). 1165 bytes result sent to driver
+  2017-06-18 22:11:56.744 INFO  TaskSetManager:58 - Finished task 1.0 in stage 1.0 (TID 4) in 26656 ms on localhost (3/3)
+  2017-06-18 22:11:56.744 INFO  TaskSchedulerImpl:58 - Removed TaskSet 1.0, whose tasks have all completed, from pool 
+  2017-06-18 22:11:56.744 INFO  DAGScheduler:58 - ResultStage 1 (foreach at SparkWordCount.scala:53) finished in 26.660 s
+  2017-06-18 22:11:56.761 INFO  DAGScheduler:58 - Job 0 finished: foreach at SparkWordCount.scala:53, took 38.010466 s
+  2017-06-18 22:11:56.769 INFO  SparkWordCount:55 - StopWatch './data/majestic_million.csv': running time (millis) = 39197
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00665  002%  textfile
+00007  000%  flatMap
+00005  000%  map
+00485  001%  reduceByKey
+38035  097%  priting foreach
+
+  2017-06-18 22:11:56.776 INFO  SparkContext:58 - Starting job: count at SparkWordCount.scala:57
+  2017-06-18 22:11:56.785 INFO  MapOutputTrackerMaster:58 - Size of output statuses for shuffle 0 is 163 bytes
+  2017-06-18 22:11:56.789 INFO  DAGScheduler:58 - Got job 1 (count at SparkWordCount.scala:57) with 3 output partitions
+  2017-06-18 22:11:56.789 INFO  DAGScheduler:58 - Final stage: ResultStage 3 (count at SparkWordCount.scala:57)
+  2017-06-18 22:11:56.789 INFO  DAGScheduler:58 - Parents of final stage: List(ShuffleMapStage 2)
+  2017-06-18 22:11:56.789 INFO  DAGScheduler:58 - Missing parents: List()
+  2017-06-18 22:11:56.790 INFO  DAGScheduler:58 - Submitting ResultStage 3 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49), which has no missing parents
+  2017-06-18 22:11:56.793 INFO  MemoryStore:58 - Block broadcast_3 stored as values in memory (estimated size 2.4 KB, free 224.2 KB)
+  2017-06-18 22:11:56.795 INFO  MemoryStore:58 - Block broadcast_3_piece0 stored as bytes in memory (estimated size 1549.0 B, free 225.7 KB)
+  2017-06-18 22:11:56.798 INFO  BlockManagerInfo:58 - Added broadcast_3_piece0 in memory on localhost:64407 (size: 1549.0 B, free: 1120.5 MB)
+  2017-06-18 22:11:56.799 INFO  SparkContext:58 - Created broadcast 3 from broadcast at DAGScheduler.scala:1006
+  2017-06-18 22:11:56.799 INFO  DAGScheduler:58 - Submitting 3 missing tasks from ResultStage 3 (ShuffledRDD[4] at reduceByKey at SparkWordCount.scala:49)
+  2017-06-18 22:11:56.800 INFO  TaskSchedulerImpl:58 - Adding task set 3.0 with 3 tasks
+  2017-06-18 22:11:56.803 INFO  TaskSetManager:58 - Starting task 0.0 in stage 3.0 (TID 6, localhost, partition 0,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:11:56.803 INFO  TaskSetManager:58 - Starting task 1.0 in stage 3.0 (TID 7, localhost, partition 1,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:11:56.804 INFO  TaskSetManager:58 - Starting task 2.0 in stage 3.0 (TID 8, localhost, partition 2,NODE_LOCAL, 1894 bytes)
+  2017-06-18 22:11:56.805 INFO  Executor:58 - Running task 0.0 in stage 3.0 (TID 6)
+  2017-06-18 22:11:56.805 INFO  Executor:58 - Running task 1.0 in stage 3.0 (TID 7)
+  2017-06-18 22:11:56.808 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:11:56.809 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 1 ms
+  2017-06-18 22:11:56.815 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:11:56.816 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 1 ms
+  2017-06-18 22:11:56.825 INFO  Executor:58 - Running task 2.0 in stage 3.0 (TID 8)
+  2017-06-18 22:11:56.828 INFO  ShuffleBlockFetcherIterator:58 - Getting 3 non-empty blocks out of 3 blocks
+  2017-06-18 22:11:56.829 INFO  ShuffleBlockFetcherIterator:58 - Started 0 remote fetches in 1 ms
+  2017-06-18 22:11:58.932 INFO  Executor:58 - Finished task 1.0 in stage 3.0 (TID 7). 1203 bytes result sent to driver
+  2017-06-18 22:11:58.936 INFO  TaskSetManager:58 - Finished task 1.0 in stage 3.0 (TID 7) in 2132 ms on localhost (1/3)
+  2017-06-18 22:11:58.950 INFO  Executor:58 - Finished task 0.0 in stage 3.0 (TID 6). 1203 bytes result sent to driver
+  2017-06-18 22:11:58.951 INFO  TaskSetManager:58 - Finished task 0.0 in stage 3.0 (TID 6) in 2150 ms on localhost (2/3)
+  2017-06-18 22:11:58.957 INFO  Executor:58 - Finished task 2.0 in stage 3.0 (TID 8). 1203 bytes result sent to driver
+  2017-06-18 22:11:58.958 INFO  TaskSetManager:58 - Finished task 2.0 in stage 3.0 (TID 8) in 2155 ms on localhost (3/3)
+  2017-06-18 22:11:58.959 INFO  DAGScheduler:58 - ResultStage 3 (count at SparkWordCount.scala:57) finished in 2.157 s
+  2017-06-18 22:11:58.959 INFO  TaskSchedulerImpl:58 - Removed TaskSet 3.0, whose tasks have all completed, from pool 
+  2017-06-18 22:11:58.959 INFO  DAGScheduler:58 - Job 1 finished: count at SparkWordCount.scala:57, took 2.183026 s
+  2017-06-18 22:11:58.960 INFO  SparkWordCount:57 - 2004212
+  2017-06-18 22:11:58.966 INFO  SparkContext:58 - Invoking stop() from shutdown hook
+  2017-06-18 22:11:58.981 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/metrics/json,null}
+  2017-06-18 22:11:58.982 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+  2017-06-18 22:11:58.982 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/api,null}
+  2017-06-18 22:11:58.983 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/,null}
+  2017-06-18 22:11:58.983 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/static,null}
+  2017-06-18 22:11:58.984 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+  2017-06-18 22:11:58.984 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+  2017-06-18 22:11:58.984 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors/json,null}
+  2017-06-18 22:11:58.985 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/executors,null}
+  2017-06-18 22:11:58.986 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/environment/json,null}
+  2017-06-18 22:11:58.986 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/environment,null}
+  2017-06-18 22:11:58.986 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+  2017-06-18 22:11:58.987 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/rdd,null}
+  2017-06-18 22:11:58.987 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage/json,null}
+  2017-06-18 22:11:58.988 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/storage,null}
+  2017-06-18 22:11:58.989 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+  2017-06-18 22:11:58.989 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/pool,null}
+  2017-06-18 22:11:58.990 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+  2017-06-18 22:11:58.990 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/stage,null}
+  2017-06-18 22:11:58.991 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages/json,null}
+  2017-06-18 22:11:58.991 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/stages,null}
+  2017-06-18 22:11:58.992 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+  2017-06-18 22:11:58.992 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/job,null}
+  2017-06-18 22:11:58.992 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs/json,null}
+  2017-06-18 22:11:58.993 INFO  ContextHandler:843 - stopped o.s.j.s.ServletContextHandler{/jobs,null}
+  2017-06-18 22:11:59.046 INFO  SparkUI:58 - Stopped Spark web UI at http://192.168.0.6:4040
+  2017-06-18 22:11:59.065 INFO  MapOutputTrackerMasterEndpoint:58 - MapOutputTrackerMasterEndpoint stopped!
+  2017-06-18 22:11:59.095 INFO  MemoryStore:58 - MemoryStore cleared
+  2017-06-18 22:11:59.096 INFO  BlockManager:58 - BlockManager stopped
+  2017-06-18 22:11:59.097 INFO  BlockManagerMaster:58 - BlockManagerMaster stopped
+  2017-06-18 22:11:59.107 INFO  SparkContext:58 - Successfully stopped SparkContext
+  2017-06-18 22:11:59.108 INFO  ShutdownHookManager:58 - Shutdown hook called
+  2017-06-18 22:11:59.110 INFO  ShutdownHookManager:58 - Deleting directory C:\Users\jaikumaran.g\AppData\Local\Temp\spark-8f1a92d6-81ef-4930-8603-d3f5783aae00
+  2017-06-18 22:11:59.112 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:58 - OutputCommitCoordinator stopped!
   

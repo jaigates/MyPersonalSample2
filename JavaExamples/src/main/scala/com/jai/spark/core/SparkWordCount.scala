@@ -24,7 +24,7 @@ object SparkWordCount {
   def main(args: Array[String]) {
 
     val fn = if (args.length < 1)
-      "./data/500krows.csv"
+      "./data/majestic_million.csv"
     else
       args(0)
 
@@ -48,7 +48,10 @@ object SparkWordCount {
     sw.start("reduceByKey")
     val reduced = wordCounts.reduceByKey(_ + _)
     sw.stop()
+    sw.start("priting foreach")
+    //reduced.map(x=>log.info(s"$x._1 : $x._2"))
     reduced.foreach(println)
+    sw.stop()
     log.info(sw.prettyPrint())
     //val collected = wordCounts.collect()
     log.info("" + reduced.count)
