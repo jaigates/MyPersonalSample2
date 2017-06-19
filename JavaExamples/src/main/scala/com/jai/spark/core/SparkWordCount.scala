@@ -53,9 +53,10 @@ object SparkWordCount {
     //sw.start("priting foreach")
     //reduced.map(x=>log.info(s"$x._1 : $x._2"))
     //reduced.foreach(x=>log.info(s"$x"))
-    
+    sw.start("forceDelete")
     val out = Paths.get("./output/sparkwordcount").toFile() 
     FileUtils.forceDelete(out);
+    sw.stop()
     sw.start("saveAsTextFile")
     reduced.saveAsTextFile(out.getCanonicalPath)
     sw.stop()
