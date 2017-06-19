@@ -1,7 +1,9 @@
-package com.jai.spark.streaming;
+package com.jai.spark.core;
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{ Seconds, StreamingContext }
+import org.apache.spark.SparkContext
+import org.springframework.util.StopWatch
 
 /**
  * Counts words in new text files created in the given directory
@@ -14,29 +16,33 @@ import org.apache.spark.streaming.{ Seconds, StreamingContext }
  *
  * Then create a text file in `localdir` and the words in the file will get counted.
  */
-object StreamingExample1 {
+object SparkWordCount {
 
   def main(args: Array[String]) {
 
     val fn = if (args.length < 1)
-      "./data/big.txt"
+      "./data/100krows.csv"
     else
       args(0)
 
-    val sparkConf = new SparkConf().setAppName("HdfsWordCount")
-    sparkConf.setMaster("local")
+    val sparkConf = new SparkConf().setAppName("HdfsWordCount").setMaster("local[*]")
     // Create the context
-    val ssc = new StreamingContext(sparkConf, Seconds(2))
+    val ssc = new SparkContext(sparkConf)
 
     // Create the FileInputDStream on the directory and use the
     // stream to count words in new files created
-    val lines = ssc.textFileStream(fn)
-    val words = lines.flatMap(_.split(" "))
-    val wordCounts = words.map(x => (x, 1)).reduceByKey(_ + _)
-    wordCounts.print()
-    ssc.start()
+    val sw = new StopWatch("wordcount")
+    val lines = ssc.textFile(fn)
+    val words = lines.flatMap(_.split(","))
+    val wordCounts = words.map(x => (x, 1))
+    //wordCounts.foreach(println)
+    val reduced= wordCounts.reduceByKey(_ + _)
+    sw.stop()
+    reduced.foreach(println)
+    sw.prettyPrint()
+    //val collected = wordCounts.collect()
+    println(reduced.count)
     
-    ssc.awaitTermination()
   }
 
 }
