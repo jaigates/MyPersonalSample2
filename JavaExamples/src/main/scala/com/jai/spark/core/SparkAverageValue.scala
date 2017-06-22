@@ -1,0 +1,52 @@
+package com.jai.spark.core
+
+import org.apache.spark._
+import java.nio.file.Files
+import java.nio.file.Paths
+import org.apache.commons.io.FileUtils
+import java.io.File
+
+
+object SparkAverageValue {
+  
+    val sparkConf = new SparkConf(true).setMaster("local[*]")
+    .setAppName("SparkAverageValue")
+    val sc = new SparkContext(sparkConf)
+  
+  def method1(): Unit = {
+  
+    val data = sc.textFile("./data/price.csv",3)
+    
+    FileUtils.deleteDirectory(new File("./output/SparkAverageValue_method1"));
+    val header = data.first()
+    data.filter( _ != header)
+        .map(_.split(","))
+        .map(  x => ( x(0)+"-"+x(1)+"-"+x(2) , (x(3).toFloat,1) ) )
+        .reduceByKey( (x,y) => (x._1+y._1, x._2+1) )
+        .map(x=> (x._1, x._2._1/x._2._2))
+        .sortByKey()
+        .coalesce(1)
+        .saveAsTextFile("./output/SparkAverageValue_method1")
+        
+    
+    
+    
+  }
+  
+  def main(args: Array[String]): Unit = {
+    
+    method1()
+     //val data = sc.textFile("./data/price.txt",3)
+     
+     
+     
+   /* from spark streaming presentaiton 
+    * data.map{ x=> (x(0),(x(1),1)) }
+        .reduceByKey(case (x,y) => (x._1 + y._1, x._2 + y._2) )
+        .map{ x => (x._1, x._2(0) / x._2(1)) }
+        .collect*/
+        
+    
+  }
+  
+}
