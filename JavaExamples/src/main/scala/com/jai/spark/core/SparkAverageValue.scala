@@ -8,6 +8,7 @@ import java.io.File
 import org.springframework.util.StopWatch
 import org.slf4j.LoggerFactory
 import org.apache.commons.lang3.StringUtils
+import org.apache.commons.lang3.math.NumberUtils
 
 object SparkAverageValue {
   val log = LoggerFactory.getLogger("SparkAverageValue" )
@@ -46,8 +47,12 @@ object SparkAverageValue {
     FileUtils.deleteDirectory(new File("./output/SparkAverageValue_method1"));
     val sw = new StopWatch("method1")
     sw.start
-    val header = data.first()
-    data.filter(_ != header)
+    //val header = data.first()
+    val data2 = data.map( x=> ( x.split(",")(0), x.split(",").filter( NumberUtils.isNumber(_) ) )).map ( x => (x._1,  x._2.map(_.toFloat)   ) )
+    val data3 =   data2.reduceByKey ( (x,y) =>  x ++ y )
+    data3.coalesce(1)
+        .saveAsTextFile("./output/SparkAverageValue_method1")
+    /*
       .map(x => (x,x.split(",").filter( StringUtils.isNumeric(_)) ))
       .map(x => (x(0) + "-" + x(1) + "-" + x(2), (x(3).toFloat, 1)))
       .reduceByKey((x, y) => (x._1 + y._1, x._2 + 1))
@@ -55,6 +60,7 @@ object SparkAverageValue {
       .sortByKey()
       .coalesce(1)
       .saveAsTextFile("./output/SparkAverageValue_method1")
+      */
     sw.stop()
     log.info(sw.prettyPrint())
   }
