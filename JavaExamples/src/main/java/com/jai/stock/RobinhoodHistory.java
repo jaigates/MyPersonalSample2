@@ -3,11 +3,13 @@ package com.jai.stock;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
@@ -29,7 +31,7 @@ public class RobinhoodHistory {
 
 		String inputFile = ".\\src\\test\\resources\\sample_robinhood_history_template1.txt";
 		Path inp = Paths.get(inputFile);
-		Path out = Path.of(inp.getParent() + "/" + inp.getFileName() + "_" + System.currentTimeMillis() +".xls");
+		Path out =   Paths.get(inp.getParent() + "/" + inp.getFileName() + "_" + System.currentTimeMillis() + ".xlsx" );
 		RobinhoodHistory r = new RobinhoodHistory();
 		r.extractToXlsx(inp, out);
 
@@ -38,7 +40,7 @@ public class RobinhoodHistory {
 	private void extractToXlsx(Path inp, Path out) {
 
 		try {
-			String content = Files.readString(inp);
+			String content = readLineByLineJava8(inp.toString());
 			String content1 = content.replaceAll("\r\n\r\n", "||");
 			String content2 = content1.replaceAll("\r\n", DELIMITER);
 			String content3 = content2.replaceAll("\\|\\|", "\r\n");
@@ -56,7 +58,7 @@ public class RobinhoodHistory {
 			String content11 = content10.replaceAll("Deposit from ", "Deposit" + DELIMITER + "Deposit"+ DELIMITER);
 			String content12 = content11.replaceAll("^\tRecent$", "Recent");
 
-			Workbook wb = new HSSFWorkbook();
+			Workbook wb = new XSSFWorkbook();
 
 			CreationHelper helper = wb.getCreationHelper();
 			Sheet sheet = wb.createSheet("sheet1");
@@ -114,4 +116,20 @@ public class RobinhoodHistory {
 		}
 
 	}
-}
+	
+	 private static String readLineByLineJava8(String filePath) 
+	    {
+	        StringBuilder contentBuilder = new StringBuilder();
+	 
+	        try (Stream<String> stream = Files.lines( Paths.get(filePath), StandardCharsets.UTF_8)) 
+	        {
+	            stream.forEach(s -> contentBuilder.append(s).append("\n"));
+	        }
+	        catch (IOException e) 
+	        {
+	            e.printStackTrace();
+	        }
+	 
+	        return contentBuilder.toString();
+	    }
+	}
